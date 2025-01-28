@@ -1,10 +1,28 @@
+import java.time.LocalDate
+import java.util.Scanner
+
 fun main() {
-    var nome = "Nicolas"
-    var idade = 50
-    idade = 19
 
-    val preco = 18.99
+    val leitor = Scanner(System.`in`)
 
-    println("Meu nome é $nome, tenho $idade anos.")
-    print("A soma de 8 e 4 é ${8 + 4}!")
+    var paciente1 = Paciente()
+    var paciente2 = Paciente()
+
+    print("Digite o nome do paciente: ")
+    paciente1.nome = leitor.nextLine()
+    print("Digite o peso do paciente: ")
+    paciente1.peso = leitor.nextInt()
+    print("Digite a altura do paciente: ")
+    paciente1.altura = leitor.nextFloat()
+    print("Digite o telefone do paciente: ")
+    paciente1.telefone = "(11) 97777-0009"
+    paciente1.dataNascimento = LocalDate.of(2002, 8, 13)
+    paciente1.mostrarDados()
+
+    paciente2.nome = "Nicolas Silva"
+    paciente2.peso = 75
+    paciente2.altura = 1.76f
+    paciente2.telefone = "(11) 99999-3355"
+    paciente2.dataNascimento = LocalDate.of(2007, 10, 10)
+    paciente2.mostrarDados()
 }
